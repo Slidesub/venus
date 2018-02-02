@@ -1,0 +1,110 @@
+html {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  margin: 0;
+  padding: 0;
+  font-size: 16px; }
+
+body {
+  margin: 0;
+  padding: 0; }
+
+.flex-row, .index-body {
+  display: flex;
+  flex-direction: row; }
+
+.flex-col, .index-body section .index-login_form {
+  display: flex;
+  flex-direction: column; }
+
+.bg-color-1 {
+  background-color: #12A89D;
+  width: 10%;
+  height: 10px; }
+
+.bg-color-2 {
+  background-color: #652D90;
+  width: 10%;
+  height: 10px; }
+
+.bg-color-3 {
+  background-color: #F7941D;
+  width: 10%;
+  height: 10px; }
+
+.bg-color-4 {
+  background-color: #BF1E2E;
+  width: 10%;
+  height: 10px; }
+
+.bg-color-5 {
+  background-color: #8C6238;
+  width: 10%;
+  height: 10px; }
+
+.bg-color-6 {
+  background-color: #F1592A;
+  width: 10%;
+  height: 10px; }
+
+.bg-color-7 {
+  background-color: #B3B5B4;
+  width: 10%;
+  height: 10px; }
+
+.bg-color-8 {
+  background-color: #25AAE2;
+  width: 10%;
+  height: 10px; }
+
+.bg-color-9 {
+  background-color: #9EB83B;
+  width: 10%;
+  height: 10px; }
+
+.bg-color-10 {
+  background-color: #808281;
+  width: 10%;
+  height: 10px; }
+
+.header {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  width: 100%;
+  height: 10px;
+  padding: 0;
+  margin: 0; }
+
+.index-body {
+  min-height: 100vh;
+  background: url("https://api.i-meto.com/bing?new") no-repeat center center;
+  background-size: cover;
+  justify-content: center;
+  align-items: center; }
+  .index-body main {
+    width: 70%;
+    padding: 3rem; }
+  .index-body section {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #808281; }
+    .index-body section .index-input_box {
+      padding: 0 10px;
+      height: 30px;
+      margin: 5px 0;
+      border: 1px solid #808281;
+      border-radius: 5px;
+      outline: #12A89D; }
+    .index-body section .index-input_btn {
+      height: 30px;
+      margin: 5px 0;
+      border: 1px solid #808281;
+      border-radius: 5px;
+      color: #fff;
+      background-color: #12A89D; }
+
+/*# sourceMappingURL=signin.1.css.map */

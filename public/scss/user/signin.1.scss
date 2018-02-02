@@ -1,0 +1,77 @@
+@import '../style.scss';
+$bg-colors: (
+    #12A89D,
+    #652D90,
+    #F7941D,
+    #BF1E2E,
+    #8C6238,
+    #F1592A,
+    #B3B5B4,
+    #25AAE2,
+    #9EB83B,
+    #808281
+);
+
+@mixin link-color($bg-color) {
+  background-color: $bg-color;
+}
+@for $i from 1 through 10 {
+    .bg-color-#{$i} {
+        @include link-color(nth($bg-colors, $i));
+        width: 10%;
+        height: 10px;
+    }
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    width: 100%;
+    height: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.index-body {
+    min-height: 100vh;
+    background: url('https://api.i-meto.com/bing?new') no-repeat center center;
+    background-size: cover;
+    @extend .flex-row;
+    justify-content: center;
+    align-items: center;
+
+    main {
+        width: 70%;
+        padding: 3rem;
+    }
+    section {
+        width: 100%;
+        background-color: #fff; 
+        border-radius: 5px;
+        border: 1px solid #808281;
+
+        .index-login_form {
+            @extend .flex-col;
+        }
+        .index-input_box {
+            padding: 0 10px;
+            height: 30px;
+            margin: 5px 0;
+            border: 1px solid #808281;
+            border-radius: 5px;
+            outline:#12A89D;
+        }
+        .index-input_btn {
+            height: 30px;
+            margin: 5px 0;
+            border: 1px solid #808281;
+            border-radius: 5px;
+            color: #fff;
+            background-color:#12A89D;
+        }
+    }
+}
+
+
+

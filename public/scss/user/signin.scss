@@ -1,0 +1,25 @@
+@import '../style.scss';
+
+$bg-colors: (
+    #12A89D,
+    #652D90,
+    #F7941D,
+    #BF1E2E,
+    #8C6238,
+    #F1592A,
+    #B3B5B4,
+    #25AAE2,
+    #9EB83B,
+    #808281
+);
+
+@mixin link-color($bg-color) {
+  background-color: $bg-color;
+}
+@for $i from 1 through 10 {
+    .bg-color-#{$i} {
+        @include link-color(nth($bg-colors, $i));
+        width: 10%;
+        height: (10rem / 16);
+    }
+}

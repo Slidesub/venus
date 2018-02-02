@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>unicome.org</title>
+    <link rel="stylesheet" href="/stylesheets/user/signin.css">
+</head>
+<body style="min-height: 100vh; width: 100%;">
+    <header style="height: 100%; width: 100%;">
+        <ul style="padding: 0; margin: 0; height: 0.625rem; width: 100%; display: flex; list-style:none;">
+            {% for i in [1,2,3,4,5,6,7,8,9,10] %}
+            <li class="bg-color-{{i}}"></li>
+            {% endfor %}
+        </ul>
+        <ul style="display: flex; list-style:none; margin: 1rem 0; padding: 0 2rem;">
+            <li style="padding: .5rem;"><a href="/">unicome.org</a></li>
+            <li style="padding: .5rem;"><a href="/article">article</a></li>
+            <li style="padding: .5rem;"><a href="/user">admin</a></li>
+            <li style="padding: .5rem;"><a href="about">about</a></li>
+        </ul>
+    </header>
+    <main>
+        <section>
+            <form id="updateForm" method="POST" action='/users/updatepws' class="index-login_form">
+                <input class="index-input_box " type="text" name="phone" placeholder="phone" />
+                <input class="index-input_box " type="password" name="password" placeholder="password" />
+            </form>
+            <button onclick='submit()'>sign in</button>
+        </section>
+    </main>
+    <script
+    src="https://code.jquery.com/jquery-2.2.4.js"
+    integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+    crossorigin="anonymous"></script>
+    <script>
+        $.ajax({
+                    url: '/users/',
+                    data: '',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'Authorization':'Bearer '+ sessionStorage.getItem('token'),
+                    },
+                    dataType: 'JSON',
+                    type: 'GET',
+                    async: true,
+                    success: function (data) {
+                        console.log(data.users);
+                    }, error: function(data) {
+                        console.log(data);
+                    }
+                });
+        function submit() {
+            $.ajax({
+                    url: '/users/updatepws',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'Authorization': sessionStorage.getItem('token'),
+                    },
+                    data: $("#updateForm").serializeArray(),
+                    dataType: 'JSON',
+                    type: 'POST',
+                    async: true,
+                    success: function (data) {
+                    },
+                    error: function(data) {
+                        console.log(data);
+                    }
+                });
+        }
+    </script>
+</body>
+</html>

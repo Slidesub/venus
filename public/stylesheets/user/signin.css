@@ -1,0 +1,72 @@
+html {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  margin: 0;
+  padding: 0;
+  font-size: 16px; }
+
+body {
+  margin: 0;
+  padding: 0; }
+
+.flex-row {
+  display: flex;
+  flex-direction: row; }
+
+.flex-col {
+  display: flex;
+  flex-direction: column; }
+
+.bg-color-1 {
+  background-color: #12A89D;
+  width: 10%;
+  height: 0.625rem; }
+
+.bg-color-2 {
+  background-color: #652D90;
+  width: 10%;
+  height: 0.625rem; }
+
+.bg-color-3 {
+  background-color: #F7941D;
+  width: 10%;
+  height: 0.625rem; }
+
+.bg-color-4 {
+  background-color: #BF1E2E;
+  width: 10%;
+  height: 0.625rem; }
+
+.bg-color-5 {
+  background-color: #8C6238;
+  width: 10%;
+  height: 0.625rem; }
+
+.bg-color-6 {
+  background-color: #F1592A;
+  width: 10%;
+  height: 0.625rem; }
+
+.bg-color-7 {
+  background-color: #B3B5B4;
+  width: 10%;
+  height: 0.625rem; }
+
+.bg-color-8 {
+  background-color: #25AAE2;
+  width: 10%;
+  height: 0.625rem; }
+
+.bg-color-9 {
+  background-color: #9EB83B;
+  width: 10%;
+  height: 0.625rem; }
+
+.bg-color-10 {
+  background-color: #808281;
+  width: 10%;
+  height: 0.625rem; }
+
+/*# sourceMappingURL=signin.css.map */
