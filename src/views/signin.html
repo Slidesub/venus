@@ -43,6 +43,8 @@
                         if (data.code === 1) {
                             sessionStorage.setItem('token', data.token);
                             alert(data.token);
+                        } else {
+                            alert(data.token);
                         }
                     }, error: function(data) {
                         console.log(data);

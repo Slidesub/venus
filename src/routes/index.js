@@ -26,5 +26,7 @@ router.post('/signup', userCtrl.signup);
 router.get('/passwd', async (ctx, next) => {
   await ctx.render('passwd')
 });
+
+
 router.post('/passwd', userCtrl.updatePassword);
 module.exports = router

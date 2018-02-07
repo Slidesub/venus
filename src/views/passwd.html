@@ -53,21 +53,22 @@
                 });
         function submit() {
             $.ajax({
-                    url: '/users/updatepws',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                        'Authorization': sessionStorage.getItem('token'),
-                    },
-                    data: $("#updateForm").serializeArray(),
-                    dataType: 'JSON',
-                    type: 'POST',
-                    async: true,
-                    success: function (data) {
-                    },
-                    error: function(data) {
-                        console.log(data);
-                    }
-                });
+                url: '/passwd',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Authorization': sessionStorage.getItem('token'),
+                },
+                data: $("#updateForm").serializeArray(),
+                dataType: 'JSON',
+                type: 'POST',
+                async: true,
+                success: function (data) {
+                    console.log(data);
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
         }
     </script>
 </body>

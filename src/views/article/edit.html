@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form id="articleForm">
+        <input type="text" name="title">
+        <input type="text" name="icon">
+        <input type="text" name="body">
+    </form>
+    <button onclick="submit()">publish</button>
+
+<script src="/javascripts/jquery-3.3.1.min.js"></script>
+<script src="/javascripts/simplemde-1.11.2.min.js"></script>
+<script>
+    function submit() {
+        $.ajax({
+            url: '/articles/edit',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization': sessionStorage.getItem('token'),
+            },
+            data: $("#articleForm").serializeArray(),
+            dataType: 'JSON',
+            type: 'POST',
+            async: true,
+            success: function (data) {
+                console.log(data.result);
+            },
+            error: function(data) {
+                console.log(data);
+            }
+        });
+    }
+</script>
+</body>
+</html>

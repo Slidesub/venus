@@ -53,7 +53,7 @@ class UserCtrl {
             }
         }
 
-        actx.body = result;
+        ctx.body = result;
     }
     static async deleteUser(ctx) {
     
