@@ -5,18 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <!-- <link rel="stylesheet" href="/plugins/simplemde-1.11.2/simplemde.min.css"></link> -->
+    <link rel="stylesheet" href="/plugins/codemirror-5.34.0/lib/codemirror.css">
+    <link rel="stylesheet" href="/plugins/codemirror-5.34.0/theme/yeti.css">
 </head>
 <body>
     <form id="articleForm">
-        <input type="text" name="title">
-        <input type="text" name="icon">
-        <input type="text" name="body">
+        <div>
+            <input type="text" name="title">
+        </div>
+        <div>
+            <input type="text" name="icon">
+        </div>
+        <div style="border: 1px solid #ddd;font: 13px;">
+            <textarea type="text" name="body" id="body"></textarea>
+        </div>
     </form>
     <button onclick="submit()">publish</button>
 
 <script src="/javascripts/jquery-3.3.1.min.js"></script>
-<script src="/javascripts/simplemde-1.11.2.min.js"></script>
+<script src="/plugins/codemirror-5.34.0/lib/codemirror.js"></script>
+<script src="/plugins/codemirror-5.34.0/mode/markdown/markdown.js"></script>
+<!-- <script src="/plugins/simplemde-1.11.2/simplemde.min.js"></script> -->
 <script>
+    $(function() {
+        // let simplemde = new SimpleMDE({
+        //     element: $("#body")[0],
+        //     placeholder: 'Type here...'
+        // });
+        let codeMirror = CodeMirror.fromTextArea($("#body")[0], {
+            lineNumbers: true,
+            mode: 'markdown',
+            highlightFormatting: true,
+            styleActiveLine: true,
+            matchBrackets: true,
+            theme: 'yeti'
+        });
+    });
     function submit() {
         $.ajax({
             url: '/articles/edit',

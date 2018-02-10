@@ -46,6 +46,7 @@ app.use(async (ctx, next) => {
 // jwt
 app.use(koajwt({secret: config.secret, key: 'user', debug: true}).unless({
   path: [
+    /^\/favicon.ico/,
     /^\/signin/,
     /^\/signup/,
     /^\/passwd/,
